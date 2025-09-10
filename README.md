@@ -20,24 +20,48 @@ npm run dev -- --host 0.0.0.0 --port 4321 #http://192.168.1.11:4321/
 #serve -s dist #http://localhost:3000
 ```
 
-Deploy with containers:
+## 🐳 Docker Setup
+
+Complete containerized setup with Astro + Flask Config Editor:
+
+### Quick Start Options
 
 ```sh
+# Option 1: Just Astro development
 make quick-dev
 # Access at: http://localhost:4321
-```
 
-```sh
+# Option 2: Just Astro production
 make quick-prod  
 # Access at: http://localhost:8090
-```
 
-**Start all services:** including the [flask editor](#astro-config-edit-via-flask)
+# Option 3: Just Config Editor
+make quick-config
+# Access at: http://localhost:5000
 
-```sh
-make all
+# Option 4: Complete setup (Astro + Config Editor)
+make quick-all
 # Astro dev: http://localhost:4321
 # Config editor: http://localhost:5000
+```
+
+### Development Commands
+
+```sh
+# Start all services (foreground)
+make all
+
+# Start complete dev stack in single container
+make dev-stack
+
+# View logs
+make logs
+
+# Stop all services
+make stop
+
+# Clean everything
+make clean
 ```
 
 > **See how I created this at [this post](https://jalcocert.github.io/JAlcocerT/ai-driven-ebooks/)**
@@ -217,13 +241,19 @@ chmod +x create_ebooks.sh
 ./create_ebooks.sh
 ```
 
-## Astro Config Edit via Flask
+## 🎨 Astro Config Editor (Flask)
 
-A beautiful web interface to edit your `config.json` file:
+A beautiful web interface to edit your `config.json` file, fully integrated with the Docker setup:
 
 ```sh
+# Start just the config editor
 make config-editor
 # Access at: http://localhost:5000
+
+# Or start everything together
+make quick-all
+# Astro: http://localhost:4321
+# Config Editor: http://localhost:5000
 ```
 
 **Features:**
@@ -233,3 +263,4 @@ make config-editor
 - 🔄 Restore from previous backups
 - ⌨️ Keyboard shortcuts (Ctrl+S to save, Ctrl+R to reload)
 - 📱 Responsive design for all devices
+- 🐳 Fully containerized with Docker Compose

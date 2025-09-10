@@ -56,29 +56,29 @@ services:
       retries: 3
       start_period: 60s
 
-  # Config Editor Flask App
-  config-editor:
-    image: python:3.11-slim
-    container_name: config-editor
-    working_dir: /app
-    ports:
-      - "5000:5000"  # Flask app on port 5000
-    volumes:
-      - ./config-editor:/app
-      - ./landing-page-book-astro-tailwind/src:/app/config  # Mount config directory
-    command: sh -c "pip install -r requirements.txt && python app.py"
-    environment:
-      - FLASK_ENV=development
-      - FLASK_DEBUG=1
-    networks:
-      - project-sellyourebook
-    restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:5000/"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 40s
+  # # Config Editor Flask App
+  # config-editor:
+  #   image: python:3.11-slim
+  #   container_name: config-editor
+  #   working_dir: /app
+  #   ports:
+  #     - "5000:5000"  # Flask app on port 5000
+  #   volumes:
+  #     - ./config-editor:/app
+  #     - ./landing-page-book-astro-tailwind/src:/app/config  # Mount config directory
+  #   command: sh -c "pip install -r requirements.txt && python app.py"
+  #   environment:
+  #     - FLASK_ENV=development
+  #     - FLASK_DEBUG=1
+  #   networks:
+  #     - project-sellyourebook
+  #   restart: unless-stopped
+  #   healthcheck:
+  #     test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:5000/"]
+  #     interval: 30s
+  #     timeout: 10s
+  #     retries: 3
+  #     start_period: 40s
 
 volumes:
   node_modules_dev:
