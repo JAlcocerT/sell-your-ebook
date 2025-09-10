@@ -32,6 +32,8 @@ make quick-prod
 # Access at: http://localhost:8090
 ```
 
+> **See how I created this at [this post](https://jalcocert.github.io/JAlcocerT/ai-driven-ebooks/)**
+
 ---
 
 ## 📚 Creating EPUB from Cover Image
@@ -117,4 +119,92 @@ EOF
 
 chmod +x create_epub.sh
 ./create_epub.sh
+```
+
+## 📄 Creating PDF from Cover Image
+
+You can also create a PDF file from the cover image (`cover-3-Ebook-SSGs.png`) using several methods:
+
+**Method 1: Using ImageMagick (Recommended)**
+
+```bash
+# Install ImageMagick
+sudo apt install imagemagick  # Ubuntu/Debian
+
+# Convert PNG to PDF
+convert cover-3-Ebook-SSGs.png sell-your-ebook.pdf
+
+# Or with specific settings
+convert cover-3-Ebook-SSGs.png -quality 100 -density 300 sell-your-ebook.pdf
+```
+
+**Method 2: Using Calibre**
+
+```bash
+# Create HTML file first, then convert to PDF
+echo '<html><body><img src="cover-3-Ebook-SSGs.png" style="width:100%; height:auto;" /></body></html>' > book.html
+ebook-convert book.html sell-your-ebook.pdf --cover=cover-3-Ebook-SSGs.png --title="Sell Your Ebook" --authors="Your Name"
+rm book.html
+```
+
+**Method 3: Using LibreOffice**
+
+```bash
+# Install LibreOffice
+sudo apt install libreoffice  # Ubuntu/Debian
+
+# Convert using LibreOffice (if you have the image in a document)
+libreoffice --headless --convert-to pdf cover-3-Ebook-SSGs.png
+```
+
+**Method 4: Using Ghostscript**
+
+```bash
+# Install Ghostscript
+sudo apt install ghostscript  # Ubuntu/Debian
+
+# Convert PNG to PDF
+gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=sell-your-ebook.pdf cover-3-Ebook-SSGs.png
+```
+
+### Quick PDF Creation
+
+```bash
+# Navigate to the public directory
+cd landing-page-book-astro-tailwind/public
+
+# Method 1: Direct conversion (simplest)
+convert cover-3-Ebook-SSGs.png ../sell-your-ebook.pdf
+
+# Method 2: With quality settings
+convert cover-3-Ebook-SSGs.png -quality 100 -density 300 ../sell-your-ebook.pdf
+
+# Method 3: Using Calibre (more control)
+echo '<html><body><img src="cover-3-Ebook-SSGs.png" style="width:100%; height:auto;" /></body></html>' > book.html
+ebook-convert book.html ../sell-your-ebook.pdf --cover=cover-3-Ebook-SSGs.png --title="Sell Your Ebook" --authors="Your Name"
+rm book.html
+```
+
+### Combined EPUB + PDF Script
+
+```bash
+# Create a script that generates both EPUB and PDF
+cat > create_ebooks.sh << 'EOF'
+#!/bin/bash
+cd landing-page-book-astro-tailwind/public
+
+echo "Creating EPUB..."
+echo '<html><body><img src="cover-3-Ebook-SSGs.png" style="width:100%; height:auto;" /></body></html>' > book.html
+ebook-convert book.html ../sell-your-ebook.epub --cover=cover-3-Ebook-SSGs.png --title="Sell Your Ebook" --authors="Your Name"
+
+echo "Creating PDF..."
+convert cover-3-Ebook-SSGs.png -quality 100 -density 300 ../sell-your-ebook.pdf
+
+rm book.html
+echo "Both EPUB and PDF created successfully!"
+echo "Files: sell-your-ebook.epub and sell-your-ebook.pdf"
+EOF
+
+chmod +x create_ebooks.sh
+./create_ebooks.sh
 ```
