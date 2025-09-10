@@ -17,57 +17,56 @@ help:
 # Development environment
 dev:
 	@echo "Starting Astro development server..."
-	docker-compose -f docker compose-ssg.yml up astro-dev
+	docker compose -f docker-compose-ssg.yml up astro-dev
 
 # Production environment
 prod:
 	@echo "Starting Astro production server..."
-	docker-compose -f docker compose-ssg.yml up astro-prod
-
+	docker compose -f docker-compose-ssg.yml up astro-prod
 
 # Stop all services
 stop:
 	@echo "Stopping all services..."
-	docker-compose -f docker compose-ssg.yml down
+	docker compose -f docker-compose-ssg.yml down
 
 # Clean up everything
 clean:
 	@echo "Cleaning up containers and volumes..."
-	docker-compose -f dockercompose-ssg.yml down -v --remove-orphans
+	docker compose -f docker-compose-ssg.yml down -v --remove-orphans
 	docker system prune -f
 
 # Show logs
 logs:
-	docker-compose -f docker compose-ssg.yml logs -f
+	docker compose -f docker-compose-ssg.yml logs -f
 
 # Build production
 build:
 	@echo "Building production version..."
-	docker-compose -f docker compose-ssg.yml run --rm astro-prod sh -c "npm install && npm run build"
+	docker compose -f docker-compose-ssg.yml run --rm astro-prod sh -c "npm install && npm run build"
 
 # Open shell in development container
 shell:
-	docker-compose -f docker compose-ssg.yml exec astro-dev sh
+	docker compose -f docker-compose-ssg.yml exec astro-dev sh
 
 # Install dependencies
 install:
 	@echo "Installing dependencies..."
-	docker-compose -f docker compose-ssg.yml run --rm astro-dev npm install
+	docker compose -f docker-compose-ssg.yml run --rm astro-dev npm install
 
 # Run tests (if available)
 test:
 	@echo "Running tests..."
-	docker-compose -f docker compose-ssg.yml run --rm astro-dev npm test
+	docker compose -f docker-compose-ssg.yml run --rm astro-dev npm test
 
 # Lint code (if available)
 lint:
 	@echo "Running linter..."
-	docker-compose -f docker compose-ssg.yml run --rm astro-dev npm run lint
+	docker compose -f docker-compose-ssg.yml run --rm astro-dev npm run lint
 
 # Format code (if available)
 format:
 	@echo "Formatting code..."
-	docker-compose -f docker compose-ssg.yml run --rm astro-dev npm run format
+	docker compose -f docker-compose-ssg.yml run --rm astro-dev npm run format
 
 # Development with live reload
 dev-live:
