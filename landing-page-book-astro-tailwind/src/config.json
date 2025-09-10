@@ -40,10 +40,10 @@
     "showTableOfContents": false
   },
   "seo": {
-    "title": "This is the ebook page title for your browser tab",
-    "description": "Um remador solitário e a tragédia que maculou a história da vila de pescadores",
-    "canonical": "https://www.livrochapadadocorisco.com",
-    "locale": "pt_BR",
+    "title": "Sell Your Ebook - Complete Guide to Digital Publishing",
+    "description": "Learn how to create, publish, and sell your ebook successfully with our comprehensive guide",
+    "canonical": "https://www.sellyourebook.com",
+    "locale": "en_US",
     "image": "/cover-3-Ebook-SSGs.png"
   },
   "theme": {
@@ -69,110 +69,110 @@
     }
   },
   "author": {
-    "name": "Alisson Carvalho",
-    "email": "alissonmssc@gmail.com",
-    "location": "Bergen, Norway",
-    "twitterUrl": "https://twitter.com/jalcocert",
-    "instagramUrl": "https://www.instagram.com/jalcocert/",
-    "linkedinUrl": "https://www.linkedin.com/in/jalcocert/"
+    "name": "John Smith",
+    "email": "john@example.com",
+    "location": "San Francisco, CA",
+    "twitterUrl": "https://twitter.com/johnsmith",
+    "instagramUrl": "https://www.instagram.com/johnsmith/",
+    "linkedinUrl": "https://www.linkedin.com/in/johnsmith/"
   },
   "book": {
-    "title": "Sell your Ebook",
-    "isbn": "978-65-89313-54-0",
-    "releaseDate": "2022-03-28",
-    "price": "34.9",
-    "currency": "BRL",
-    "buyPhysicalUrl": "https://www.arteimpressaeditora.com.br/product-page/chapada-do-corisco-alisson-carvalho",
-    "buyDigitalUrl": "https://www.amazon.com.br/Chapada-do-Corisco-Alisson-Carvalho-ebook/dp/B09WTD7RW9/",
+    "title": "Sell Your Ebook",
+    "isbn": "978-1-234567-89-0",
+    "releaseDate": "2024-01-15",
+    "price": "29.99",
+    "currency": "USD",
+    "buyPhysicalUrl": "https://www.amazon.com/Sell-Your-Ebook-Complete-Guide/dp/1234567890",
+    "buyDigitalUrl": "https://www.amazon.com/Sell-Your-Ebook-Complete-Guide-ebook/dp/B09WTD7RW9/",
     "buyAudiobookUrl": "#"
   },
   "hero": {
-    "title": "Sell your Ebook",
+    "title": "Sell Your Ebook",
     "description": [
-      "O livro faz uma releitura das crenças que povoam o imaginário dos ribeirinhos, moradores da Vila Velha do Poti. Local que pincela o cenário de uma região esquecida durante muitos anos e abandonada por uma elite política que adotou um projeto higienista causando a apartação de classes sociais divergentes.",
-      "O isolamento geográfico entre a Vila Velha e a Vila Nova é exposto nas entrelinhas dos causos e lendas. Além disso, os mitos repassados de forma oral entre os ribeirinhos são utilizados como mote para refletir sobre a violência vivenciada pelos moradores.",
-      "\"Chapada do Corisco\" é costura um romance proibido que surpreenderá o leitor, a história retoma o problema da maldição que maculou uma Vila tingindo as águas calmas do Poti com o sangue sagrado."
+      "Transform your knowledge into a profitable digital business. This comprehensive guide will teach you everything you need to know about creating, publishing, and selling ebooks successfully in today's digital marketplace.",
+      "From writing and formatting to marketing and distribution, you'll learn proven strategies that have helped thousands of authors build sustainable income streams through ebook publishing.",
+      "Whether you're a first-time author or an experienced writer looking to expand your reach, this book provides the tools, techniques, and insights you need to succeed in the competitive world of digital publishing."
     ],
     "buttons": {
       "buyBook": "Get the eBook",
-      "buyAudiobook": "Compre o Audiobook",
+      "buyAudiobook": "Get the Audiobook",
       "downloadChapter": "Download the first chapter",
       "downloadChapterSuffix": "for free."
     },
-    "amazonTag": "best-seller"
+    "amazonTag": "bestseller"
   },
   "whyReadThisBook": {
-    "title": "Por que ler esse livro?",
+    "title": "Why read this book?",
     "description": [
-      "O livro parte de uma pesquisa de campo que durou aproximadamente dois anos.",
-      "Nasceu da construção da personagem, quando o autor investigava a Lenda do Cabeça de Cuia como parte dos estudos do laboratório de criação para a montagem da peça teatral \"Três\"do grupo Épica Cia de Criação. O texto desenvolvido pelo dramaturgo e diretor Wanden Lima que fez uma releitura da peça de Gomes Campos \"O pescador e o Rio\", gestou em Alisson Carvalho um desejo de investigar mais profundamente não somente a lenda supracitada, mas o conjunto de histórias que permeavam o imaginário dos ribeirinhos piauienses. .",
-      "Essa curiosidade se transformou nos primeiros rascunhos e surgia a obra Chapada do Corisco.",
-      "O livro é um apanhado de muitas das crenças dos piauienses e condensa também elementos importantes para a cultura dos ribeirinhos."
+      "This book is the result of extensive research and real-world experience in the ebook publishing industry, spanning over two years of hands-on testing and implementation.",
+      "Born from the author's own journey of building a successful digital publishing business, this guide combines practical strategies with proven techniques that have generated millions in ebook sales.",
+      "What started as personal experimentation with different publishing platforms and marketing strategies evolved into a comprehensive system that thousands of authors now use to build profitable ebook businesses.",
+      "This book distills the most effective methods from the digital publishing world and presents them in an actionable, step-by-step format that anyone can follow to achieve success."
     ]
   },
   "freeChapter": {
-    "title": "Capítulo Gratuito",
-    "description": "Esse capítulo vai te instigar a ler ainda mais.",
+    "title": "Free Chapter",
+    "description": "This chapter will inspire you to read even more.",
     "button": {
-      "text": "Baixar Capítulo Gratuito",
-      "downloadName": "chapada-do-corisco_prologo-cap-1",
-      "url": "/chapada-do-corisco_prog-cap-1.pdf"
+      "text": "Download Free Chapter",
+      "downloadName": "sell-your-ebook-chapter-1",
+      "url": "/static/ebook-chapter-1.pdf"
     }
   },
   "buy": {
-    "title": "Compre agora",
-    "description": "Se junte a outros leitores, e conheça esse romance proibido na Vila do Poti.",
+    "title": "Buy Now",
+    "description": "Join thousands of successful authors who have transformed their knowledge into profitable ebook businesses.",
     "cta": {
-      "title": "Escolha sua versão",
-      "subtitle": "Todas as versões incluem o mesmo conteúdo"
+      "title": "Choose your version",
+      "subtitle": "All versions include the same content"
     },
     "countingSell": {
-      "text": "Mais de",
-      "number": "2,425",
-      "unit": "cópias",
-      "suffix": "vendidas"
+      "text": "Over",
+      "number": "10,000",
+      "unit": "copies",
+      "suffix": "sold worldwide"
     }
   },
   "sectionPrices": {
     "priceLeft": {
       "title": "Audiobook",
       "amount": {
-        "decimal": 14,
-        "cents": 95
+        "decimal": 19,
+        "cents": 99
       },
-      "details": ["3+ Horas", "Formato MP3"],
+      "details": ["6+ Hours", "MP3 Format"],
       "button": {
-        "label": "Em gravação",
+        "label": "Coming Soon",
         "url": "#"
       }
     },
     "priceMain": {
-      "title": "Livro físico",
+      "title": "Physical Book",
       "amount": {
-        "decimal": 34,
-        "cents": 90
+        "decimal": 29,
+        "cents": 99
       },
-      "details": ["164 Páginas", "Capa fosca", "Papel creme"],
+      "details": ["250 Pages", "Premium Paper", "Hardcover"],
       "button": {
-        "label": "Compre na Arte Impressa",
-        "url": "https://www.arteimpressaeditora.com.br/product-page/chapada-do-corisco-alisson-carvalho"
+        "label": "Buy on Amazon",
+        "url": "https://www.amazon.com/Sell-Your-Ebook-Complete-Guide/dp/1234567890"
       },
       "tagTitle": {
-        "title": "Mais Popular",
+        "title": "Most Popular",
         "cssClass": "text-book-gray bg-book-theme"
       }
     },
     "priceRight": {
       "title": "E-book",
       "amount": {
-        "decimal": 13,
+        "decimal": 19,
         "cents": 99
       },
       "previousAmount": "",
-      "details": ["164 Páginas", "Formato MOBI (Amazon)"],
+      "details": ["250 Pages", "PDF & EPUB Format"],
       "button": {
-        "label": "Compre na Amazon",
-        "url": "https://www.amazon.com.br/Chapada-do-Corisco-Alisson-Carvalho-ebook/dp/B09WTD7RW9/"
+        "label": "Buy on Amazon",
+        "url": "https://www.amazon.com/Sell-Your-Ebook-Complete-Guide-ebook/dp/B09WTD7RW9/"
       }
     }
   }

@@ -2,6 +2,8 @@
 
 Simple landing page with Stripe connection to sell your ebook.
 
+> To actually create an ebook (with code), see [this other repo](https://github.com/JAlcocerT/ebooks).
+
 
 ✨ Acknowledgment
 
