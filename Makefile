@@ -2,7 +2,7 @@
 # Includes Astro SSG + Flask Config Editor
 # https://github.com/JAlcocerT/Docker/tree/main/Web/SSGs/Astro
 
-.PHONY: help dev prod stop clean logs build config-editor all dev-stack
+.PHONY: help dev prod stop clean logs build config-editor all dev-stack prod-deploy prod-logs prod-stop prod-clean
 
 # Default target
 help:
@@ -17,6 +17,12 @@ help:
 	@echo "  logs         - Show logs for all services"
 	@echo "  build        - Build production version"
 	@echo "  shell        - Open shell in development container"
+	@echo ""
+	@echo "Production deployment:"
+	@echo "  prod-deploy  - Deploy to production server (accessible from external IP)"
+	@echo "  prod-logs    - Show production logs"
+	@echo "  prod-stop    - Stop production services"
+	@echo "  prod-clean   - Clean production containers and volumes"
 
 # Development environment
 dev:
@@ -125,3 +131,26 @@ quick-all:
 	@echo "Astro dev server: http://localhost:4321"
 	@echo "Config editor: http://localhost:5000"
 	@echo "Use 'make logs' to see logs or 'make stop' to stop"
+
+# Production deployment
+prod-deploy:
+	@echo "Starting production deployment..."
+	docker compose -f docker-compose.prod.yml up -d
+	@echo "Production Astro: http://YOUR_SERVER_IP:8090"
+	@echo "Production Config Editor: http://YOUR_SERVER_IP:5000"
+	@echo "Use 'make prod-logs' to see logs or 'make prod-stop' to stop"
+
+# Production logs
+prod-logs:
+	@echo "Showing production logs..."
+	docker compose -f docker-compose.prod.yml logs -f
+
+# Stop production
+prod-stop:
+	@echo "Stopping production services..."
+	docker compose -f docker-compose.prod.yml down
+
+# Production clean
+prod-clean:
+	@echo "Cleaning production containers and volumes..."
+	docker compose -f docker-compose.prod.yml down -v --remove-orphans

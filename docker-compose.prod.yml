@@ -1,0 +1,63 @@
+# Production Docker Compose Setup for Sell Your Ebook
+# Optimized for server deployment with proper network exposure
+
+services:
+  # Astro Production Build & Serve
+  astro-prod:
+    image: node:22.16-alpine3.22
+    container_name: astro-prod
+    working_dir: /app
+    volumes:
+      - ./landing-page-book-astro-tailwind:/app
+      - node_modules_prod:/app/node_modules
+    ports:
+      - "0.0.0.0:8090:4321"  # Explicitly bind to all interfaces
+    command: >
+      sh -c "npm install && 
+      npm run build && 
+      npx http-server ./dist -p 4321 -a 0.0.0.0"
+    environment:
+      - NODE_ENV=production
+      - PORT=4321
+    networks:
+      - project-sellyourebook
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:4321/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # Flask Config Editor (Production)
+  config-editor:
+    image: python:3.11-slim
+    container_name: config-editor
+    working_dir: /app
+    ports:
+      - "0.0.0.0:5000:5000"  # Explicitly bind to all interfaces
+    volumes:
+      - ./config-editor:/app
+      - ./landing-page-book-astro-tailwind/src:/app/config
+    command: sh -c "pip install -r requirements.txt && python app.py"
+    environment:
+      - FLASK_ENV=production
+      - FLASK_DEBUG=0
+      - FLASK_HOST=0.0.0.0
+      - FLASK_PORT=5000
+    networks:
+      - project-sellyourebook
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:5000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  node_modules_prod:
+
+networks:
+  project-sellyourebook:
+    driver: bridge

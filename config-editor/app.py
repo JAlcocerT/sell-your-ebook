@@ -110,4 +110,10 @@ def restore_backup(backup_name):
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    # Get host and port from environment variables for production deployment
+    host = os.environ.get('FLASK_HOST', '0.0.0.0')
+    port = int(os.environ.get('FLASK_PORT', 5000))
+    debug = os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'
+    
+    print(f"Starting Flask app on {host}:{port} (debug={debug})")
+    app.run(debug=debug, host=host, port=port)
