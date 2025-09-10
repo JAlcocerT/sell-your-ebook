@@ -41,7 +41,7 @@ import Checkmark from "./icons/Checkmark.astro";
                     </h3><div class="mt-4 flex items-center justify-center">
                       <span
                         class="px-1 flex items-start text-6xl tracking-tight text-book-gray"
-                        ><span class="font-extrabold">R${sectionPrices.priceLeft.amount.decimal}</span>
+                        ><span class="font-extrabold">{book.currency}{sectionPrices.priceLeft.amount.decimal}</span>
                       </span><span
                         class="text-2xl leading-8 font-medium text-gray-500"
                         >,{sectionPrices.priceLeft.amount.cents}</span
@@ -101,7 +101,7 @@ import Checkmark from "./icons/Checkmark.astro";
                   </h3><div class="mt-4 flex items-center justify-center">
                     <span
                       class="px-1 flex items-start text-6xl tracking-tight text-book-gray sm:text-6xl"
-                      ><span class="font-extrabold">R${sectionPrices.priceMain.amount.decimal}</span>
+                      ><span class="font-extrabold">{book.currency}{sectionPrices.priceMain.amount.decimal}</span>
                     </span><span class="text-2xl font-medium text-gray-500"
                       >,{sectionPrices.priceLeft.amount.cents}</span
                     >
@@ -153,7 +153,7 @@ import Checkmark from "./icons/Checkmark.astro";
                     </h3>
                     <div class="mt-4 flex items-center justify-center">
                       <span class="px-1 flex items-start text-6xl tracking-tight text-book-gray">
-                        <span class="font-extrabold">R${sectionPrices.priceRight.amount.decimal}</span>
+                        <span class="font-extrabold">{book.currency}{sectionPrices.priceRight.amount.decimal}</span>
                       </span>
                       <span class="text-xl font-medium text-gray-500">,{sectionPrices.priceRight.amount.cents}</span>
 

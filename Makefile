@@ -1,73 +1,94 @@
-# Default make goal
-.DEFAULT_GOAL := help
+# Makefile for Astro SSG Docker Management
+# https://github.com/JAlcocerT/Docker/tree/main/Web/SSGs/Astro
 
-# Auto-load variables from .env if present (PB_ADMIN_EMAIL, PB_ADMIN_PASSWORD, PB_URL, EMAIL, PASSWORD, USERNAME, ...)
-ifneq (,$(wildcard .env))
-include .env
-# Export all keys from .env to the environment for subprocesses
-export $(shell sed -n 's/^\([A-Za-z_][A-Za-z0-9_]*\)=.*/\1/p' .env)
-endif
+.PHONY: help dev prod stop clean logs build
 
-.PHONY: local-install
-local-install: ## Install dependencies using npm (runs: npm install)
-	npm install
+# Default target
+help:
+	@echo "Available commands:"
+	@echo "  dev     - Start development server (http://localhost:4321)"
+	@echo "  prod    - Start production server (http://localhost:8090)"
+	@echo "  stop    - Stop all containers"
+	@echo "  clean   - Stop and remove all containers and volumes"
+	@echo "  logs    - Show logs for all services"
+	@echo "  build   - Build production version"
+	@echo "  shell   - Open shell in development container"
 
-.PHONY: local-build
-local-build: ## Build the project using npm (runs: npm run build)
-	npm run build
+# Development environment
+dev:
+	@echo "Starting Astro development server..."
+	docker-compose -f docker compose-ssg.yml up astro-dev
 
-.PHONY: local-dev
-local-dev: ## Start the dev server using npm (runs: npm run dev)
-	npm run dev -- --host 0.0.0.0 --port 4321
+# Production environment
+prod:
+	@echo "Starting Astro production server..."
+	docker-compose -f docker compose-ssg.yml up astro-prod
 
-.PHONY: local-flask-install
-local-flask-install: ## Install Python deps for Flask app using uv (manages .venv automatically)
-	uv sync
 
-.PHONY: local-flask
-local-flask: ## Run the Flask app on http://localhost:5050 using uv
-	uv run app.py
+# Stop all services
+stop:
+	@echo "Stopping all services..."
+	docker-compose -f docker compose-ssg.yml down
 
-.PHONY: web-containers-up
-web-containers-up: ## Start dev server on http://localhost:4321 using docker-compose-ssg.yml
-	docker compose -f docker-compose-ssg.yml up -d
+# Clean up everything
+clean:
+	@echo "Cleaning up containers and volumes..."
+	docker-compose -f dockercompose-ssg.yml down -v --remove-orphans
+	docker system prune -f
 
-.PHONY: web-containers-down
-web-containers-down: ## Stop dev server on http://localhost:4321 using docker-compose-ssg.yml
-	docker compose -f docker-compose-ssg.yml down
+# Show logs
+logs:
+	docker-compose -f docker compose-ssg.yml logs -f
 
-.PHONY: stack-down
-stack-down: ## Stop PocketBase, Flask, and Astro dev using docker-compose.yml
-	docker compose -f docker-compose.yml down
+# Build production
+build:
+	@echo "Building production version..."
+	docker-compose -f docker compose-ssg.yml run --rm astro-prod sh -c "npm install && npm run build"
 
-.PHONY: stack-logs
-stack-logs: ## Tail logs for PocketBase, Flask, and Astro dev
-	docker compose -f docker-compose.yml logs -f pocketbase flask-cms astro-dev
+# Open shell in development container
+shell:
+	docker-compose -f docker compose-ssg.yml exec astro-dev sh
 
-.PHONY: web-prod-up
-web-prod-up: ## Start ONLY Astro production from main docker-compose.yml (detached)
-	docker compose -f docker-compose.yml up -d --build astro-prod
+# Install dependencies
+install:
+	@echo "Installing dependencies..."
+	docker-compose -f docker compose-ssg.yml run --rm astro-dev npm install
 
-.PHONY: web-prod-down
-web-prod-down: ## Stop ONLY Astro production from main docker-compose.yml
-	docker compose -f docker-compose.yml down --remove-orphans
+# Run tests (if available)
+test:
+	@echo "Running tests..."
+	docker-compose -f docker compose-ssg.yml run --rm astro-dev npm test
 
-.PHONY: web-prod-logs
-web-prod-logs: ## Tail Astro production logs from main docker-compose.yml
-	docker compose -f docker-compose.yml logs -f astro-prod
+# Lint code (if available)
+lint:
+	@echo "Running linter..."
+	docker-compose -f docker compose-ssg.yml run --rm astro-dev npm run lint
 
-.PHONY: ssg-prod-up
-ssg-prod-up: ## (Alt) Start ONLY Astro production using docker-compose-ssg.yml (detached)
-	docker compose -f docker-compose-ssg.yml up -d --build astro-prod
+# Format code (if available)
+format:
+	@echo "Formatting code..."
+	docker-compose -f docker compose-ssg.yml run --rm astro-dev npm run format
 
-.PHONY: ssg-prod-down
-ssg-prod-down: ## (Alt) Stop ONLY Astro production using docker-compose-ssg.yml
-	docker compose -f docker-compose-ssg.yml down --remove-orphans
+# Development with live reload
+dev-live:
+	@echo "Starting development with live reload..."
+	docker compose -f docker-compose-ssg.yml up astro-dev --build
 
-.PHONY: ssg-prod-logs
-ssg-prod-logs: ## (Alt) Tail Astro production logs using docker-compose-ssg.yml
-	docker compose -f docker-compose-ssg.yml logs -f astro-prod
+# Production build and serve
+prod-build:
+	@echo "Building and serving production..."
+	docker compose -f docker-compose-ssg.yml up astro-prod --build
 
-.PHONY: help
-help: ## Show this help
-	@awk 'BEGIN {FS = ":.*##"}; /^[a-zA-Z0-9_.-]+:.*?##/ {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
+# Quick development setup
+quick-dev:
+	@echo "Quick development setup..."
+	docker compose -f docker-compose-ssg.yml up astro-dev -d
+	@echo "Development server running at http://localhost:4321"
+	@echo "Use 'make logs' to see logs or 'make stop' to stop"
+
+# Quick production setup
+quick-prod:
+	@echo "Quick production setup..."
+	docker compose -f docker-compose-ssg.yml up astro-prod -d
+	@echo "Production server running at http://localhost:8090"
+	@echo "Use 'make logs' to see logs or 'make stop' to stop"

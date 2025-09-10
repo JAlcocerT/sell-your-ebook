@@ -11,7 +11,7 @@
   "sections": {
     "hero": true,
     "whyReadThisBook": true,
-    "audiobook": false,
+    "audiobook": true,
     "interviews": true,
     "freeChapter": true,
     "whatsInside": true,
@@ -81,7 +81,7 @@
     "isbn": "978-1-234567-89-0",
     "releaseDate": "2024-01-15",
     "price": "29.99",
-    "currency": "USD",
+    "currency": "$",
     "buyPhysicalUrl": "https://www.amazon.com/Sell-Your-Ebook-Complete-Guide/dp/1234567890",
     "buyDigitalUrl": "https://www.amazon.com/Sell-Your-Ebook-Complete-Guide-ebook/dp/B09WTD7RW9/",
     "buyAudiobookUrl": "#"
