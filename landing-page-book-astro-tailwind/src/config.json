@@ -195,6 +195,18 @@
       "Conclusion: Your Path to Success"
     ]
   },
+  "audiobook": {
+    "title": "Why listen to this audiobook?",
+    "description": [
+      "The audiobook is a way to expand your reading experiences, helping to broaden the ways of accessing the book, in addition to having the book recorded entirely by the author himself.",
+      "This means that the reader will have a special, unique edition.",
+      "Listen to a free excerpt:"
+    ],
+    "audioSample": {
+      "url": "/audiobook-reasons-to-buy.mp3",
+      "label": "Free audio sample"
+    }
+  },
   "sectionPrices": {
     "priceLeft": {
       "title": "Audiobook",

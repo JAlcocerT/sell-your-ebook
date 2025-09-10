@@ -1,23 +1,22 @@
 ---
 import { Image } from "astro:assets";
 
-import { author, images } from "../config.json";
+import { author, images, audiobook } from "../config.json";
 ---
 
 <div class="bg-gray-50">
   <div class="max-w-screen-xl mx-auto py-16">
     <h2 class="text-5xl mb-8 font-semibold text-gray-900 px-4">
-      Por que ouvir esse<!-- -->&nbsp;<span class="underline">audiobook?</span>
+      {audiobook.title.split(' ').slice(0, 3).join(' ')}<!-- -->&nbsp;<span class="underline">{audiobook.title.split(' ').slice(3).join(' ')}</span>
     </h2><div class="flex-none sm:flex">
       <div class="text-lg text-gray-600 sm:flex-1 px-4">
+        {audiobook.description.map((paragraph, index) => (
+          <p class={index === audiobook.description.length - 1 ? "mb-4 italic" : "mb-4"}>
+            {paragraph}
+          </p>
+        ))}
         <p class="mb-4">
-          O audiobook é uma forma de ampliar as experiências com a leitura,
-          ajudará a ampliar as formas de acesso ao livro, além de ter o livro
-          gravado inteiramente pelo próprio autor.
-        </p><p class="mb-4">
-          Significa que o leitor terá uma edição especial, única.
-        </p><p class="mb-4 italic">Ouça um trecho gratuito:</p><p class="mb-4">
-          <audio src="/audiobook-parte-1.mp4" controls=""></audio>
+          <audio src={audiobook.audioSample.url} controls="" aria-label={audiobook.audioSample.label}></audio>
         </p>
       </div><div class="text-lg text-gray-600 sm:flex-1 px-4">
         <Image
