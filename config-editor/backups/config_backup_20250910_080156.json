@@ -7,11 +7,11 @@
     "showAuthorBio": true,
     "showBookPreview": true,
     "showContactInfo": true,
-    "showHeroCTA": true,
-    "showNewsletterSignup": true,
+    "showHeroCTA": false,
+    "showNewsletterSignup": false,
     "showRelatedBooks": false,
-    "showReviews": true,
-    "showTableOfContents": false
+    "showReviews": false,
+    "showTableOfContents": true
   },
   "audiobook": {
     "audioSample": {
@@ -19,8 +19,8 @@
       "url": "/audiobook-reasons-to-buy.mp3"
     },
     "description": [
-      "The audiobook is the best way to expand your reading experiences, helping to broaden the ways of accessing the book, in addition to having the book recorded entirely by the author himself.",
-      "This means that the reader will have a special, unique edition!",
+      "The audiobook is a way to expand your reading experiences, helping to broaden the ways of accessing the book, in addition to having the book recorded entirely by the author himself.",
+      "This means that the reader will have a special, unique edition.",
       "Listen to a free excerpt:"
     ],
     "title": "Why listen to this audiobook?"

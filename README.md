@@ -32,6 +32,14 @@ make quick-prod
 # Access at: http://localhost:8090
 ```
 
+**Start all services:** including the [flask editor](#astro-config-edit-via-flask)
+
+```sh
+make all
+# Astro dev: http://localhost:4321
+# Config editor: http://localhost:5000
+```
+
 > **See how I created this at [this post](https://jalcocert.github.io/JAlcocerT/ai-driven-ebooks/)**
 
 ---
@@ -208,3 +216,20 @@ EOF
 chmod +x create_ebooks.sh
 ./create_ebooks.sh
 ```
+
+## Astro Config Edit via Flask
+
+A beautiful web interface to edit your `config.json` file:
+
+```sh
+make config-editor
+# Access at: http://localhost:5000
+```
+
+**Features:**
+- 🎨 Beautiful modern UI with Tailwind CSS
+- 📝 Real-time JSON editing with syntax highlighting
+- 💾 Automatic backups before saving
+- 🔄 Restore from previous backups
+- ⌨️ Keyboard shortcuts (Ctrl+S to save, Ctrl+R to reload)
+- 📱 Responsive design for all devices

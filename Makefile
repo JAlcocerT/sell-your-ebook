@@ -1,18 +1,20 @@
 # Makefile for Astro SSG Docker Management
 # https://github.com/JAlcocerT/Docker/tree/main/Web/SSGs/Astro
 
-.PHONY: help dev prod stop clean logs build
+.PHONY: help dev prod stop clean logs build config-editor all
 
 # Default target
 help:
 	@echo "Available commands:"
-	@echo "  dev     - Start development server (http://localhost:4321)"
-	@echo "  prod    - Start production server (http://localhost:8090)"
-	@echo "  stop    - Stop all containers"
-	@echo "  clean   - Stop and remove all containers and volumes"
-	@echo "  logs    - Show logs for all services"
-	@echo "  build   - Build production version"
-	@echo "  shell   - Open shell in development container"
+	@echo "  dev          - Start development server (http://localhost:4321)"
+	@echo "  prod         - Start production server (http://localhost:8090)"
+	@echo "  config-editor - Start config editor (http://localhost:5000)"
+	@echo "  all          - Start all services (dev + config-editor)"
+	@echo "  stop         - Stop all containers"
+	@echo "  clean        - Stop and remove all containers and volumes"
+	@echo "  logs         - Show logs for all services"
+	@echo "  build        - Build production version"
+	@echo "  shell        - Open shell in development container"
 
 # Development environment
 dev:
@@ -91,3 +93,13 @@ quick-prod:
 	docker compose -f docker-compose-ssg.yml up astro-prod -d
 	@echo "Production server running at http://localhost:8090"
 	@echo "Use 'make logs' to see logs or 'make stop' to stop"
+
+# Config Editor
+config-editor:
+	@echo "Starting Config Editor..."
+	docker compose -f docker-compose-ssg.yml up config-editor
+
+# Start all services (dev + config-editor)
+all:
+	@echo "Starting all services..."
+	docker compose -f docker-compose-ssg.yml up astro-dev config-editor

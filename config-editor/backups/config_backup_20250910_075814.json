@@ -1,0 +1,253 @@
+{
+  "_comment": "=== CONDITIONAL LOGIC CONFIGURATION ===",
+  "_sections": "Control which major sections are rendered on the page",
+  "_conditionalLogic": "Control specific elements within components",
+  "_advancedConditional": "Advanced conditional logic for future features",
+  
+  "showAmazonTag": false,
+  "showCountingSell": false,
+  "showBuyAudiobookButton": false,
+  
+  "sections": {
+    "hero": true,
+    "whyReadThisBook": true,
+    "audiobook": true,
+    "interviews": true,
+    "freeChapter": true,
+    "whatsInside": true,
+    "buy": true,
+    "footer": false
+  },
+  
+  "conditionalLogic": {
+    "showAmazonTag": false,
+    "showBuyAudiobookButton": false,
+    "showAboutAuthor": true,
+    "showDownloadLink": true,
+    "showSocialLinks": true,
+    "showTestimonials": true,
+    "showPricing": true
+  },
+  
+  "advancedConditional": {
+    "showHeroCTA": true,
+    "showAuthorBio": true,
+    "showBookPreview": true,
+    "showContactInfo": true,
+    "showRelatedBooks": false,
+    "showNewsletterSignup": false,
+    "showReviews": true,
+    "showTableOfContents": false
+  },
+  "seo": {
+    "title": "Sell Your Ebook - Complete Guide to Digital Publishing",
+    "description": "Learn how to create, publish, and sell your ebook successfully with our comprehensive guide",
+    "canonical": "https://ebook.jalcocertech.com",
+    "locale": "en_US",
+    "image": "/cover-3-Ebook-SSGs.png"
+  },
+  "theme": {
+    "color": "#f59e0b"
+  },
+  "images": {
+    "hero": {
+      "cover": "/cover-3-Ebook-SSGs.png",
+      "amazonLogo": "/amazon.svg"
+    },
+    "author": {
+      "photo": "/author.jpeg"
+    },
+    "book": {
+      "inside": "/livro-dentro.jpeg"
+    },
+    "audiobook": {
+      "cover": "/audiobook.jpeg"
+    },
+    "testimonials": {
+      "nikeLogo": "/logo-nike.svg",
+      "avatarZachary": "/avatar-zachary.jpeg"
+    }
+  },
+  "author": {
+    "name": "John Smith",
+    "email": "john@example.com",
+    "location": "San Francisco, CA",
+    "twitterUrl": "https://twitter.com/johnsmith",
+    "instagramUrl": "https://www.instagram.com/johnsmith/",
+    "linkedinUrl": "https://www.linkedin.com/in/johnsmith/"
+  },
+  "book": {
+    "title": "Sell Your Ebook",
+    "isbn": "978-1-234567-89-0",
+    "releaseDate": "2024-01-15",
+    "price": "29.99",
+    "currency": "$",
+    "buyPhysicalUrl": "https://www.amazon.com/Sell-Your-Ebook-Complete-Guide/dp/1234567890",
+    "buyDigitalUrl": "https://www.amazon.com/Sell-Your-Ebook-Complete-Guide-ebook/dp/B09WTD7RW9/",
+    "buyAudiobookUrl": "#"
+  },
+  "hero": {
+    "title": "Sell Your Ebook",
+    "description": [
+      "Transform your knowledge into a profitable digital business. This comprehensive guide will teach you everything you need to know about creating, publishing, and selling ebooks successfully in today's digital marketplace.",
+      "From writing and formatting to marketing and distribution, you'll learn proven strategies that have helped thousands of authors build sustainable income streams through ebook publishing.",
+      "Whether you're a first-time author or an experienced writer looking to expand your reach, this book provides the tools, techniques, and insights you need to succeed in the competitive world of digital publishing."
+    ],
+    "buttons": {
+      "buyBook": "Get the eBook",
+      "buyAudiobook": "Get the Audiobook",
+      "downloadChapter": "Download the first chapter",
+      "downloadChapterSuffix": "for free."
+    },
+    "amazonTag": "bestseller",
+    "urls": {
+      "buyBook": "https://buy.stripe.com/6oEg2n1pu15j9UcbII"
+    }
+  },
+  "whyReadThisBook": {
+    "title": "Why read this book?",
+    "description": [
+      "This book is the result of extensive research and real-world experience in the ebook publishing industry, spanning over two years of hands-on testing and implementation.",
+      "Born from the author's own journey of building a successful digital publishing business, this guide combines practical strategies with proven techniques that have generated millions in ebook sales.",
+      "What started as personal experimentation with different publishing platforms and marketing strategies evolved into a comprehensive system that thousands of authors now use to build profitable ebook businesses.",
+      "This book distills the most effective methods from the digital publishing world and presents them in an actionable, step-by-step format that anyone can follow to achieve success."
+    ]
+  },
+  "freeChapter": {
+    "title": "Free Chapter",
+    "description": "This chapter will inspire you to read even more.",
+    "button": {
+      "text": "Download Free Chapter",
+      "downloadName": "sell-your-ebook-chapter-1",
+      "url": "/static/ebook-chapter-1.pdf"
+    }
+  },
+  "buy": {
+    "title": "Buy Now",
+    "description": "Join thousands of successful authors who have transformed their knowledge into profitable ebook businesses.",
+    "cta": {
+      "title": "Choose your version",
+      "subtitle": "All versions include the same content"
+    },
+    "countingSell": {
+      "text": "Over",
+      "number": "10,000",
+      "unit": "copies",
+      "suffix": "sold worldwide"
+    }
+  },
+  "interviews": {
+    "title": "See what readers are saying...",
+    "testimonials": [
+      {
+        "imageUrl": "/avatar-addy.jpeg",
+        "name": "JL Johnson",
+        "company": {
+          "name": "Digital Marketing Expert",
+          "url": "https://sarahjohnson.com"
+        },
+        "summary": "This book completely transformed my approach to ebook publishing. The step-by-step strategies are practical and immediately actionable. I went from struggling to sell 10 copies to generating $5,000 in my first month using the techniques outlined in this guide.",
+        "location": "Austin, Texas",
+        "twitterUrl": "https://twitter.com/sarahjohnson",
+        "linkedinUrl": "https://linkedin.com/in/sarahjohnson"
+      },
+      {
+        "imageUrl": "/avatar-berg.jpeg",
+        "name": "Michael Chen",
+        "company": {
+          "name": "Self-Published Author",
+          "url": "https://michaelchenbooks.com"
+        },
+        "summary": "As a first-time author, I was overwhelmed by the publishing process. This book provided clear guidance on everything from formatting to marketing. The distribution strategies alone helped me reach readers across multiple platforms and increase my sales by 300%.",
+        "location": "Seattle, Washington",
+        "twitterUrl": "https://twitter.com/michaelchen",
+        "mediumUrl": "https://medium.com/@michaelchen"
+      },
+      {
+        "imageUrl": "/avatar-zachary.jpeg",
+        "name": "Yosua Rodriguez",
+        "company": {
+          "name": "Content Creator & Author",
+          "url": "https://emilyrodriguez.com"
+        },
+        "summary": "The marketing section of this book is pure gold. I learned how to build an email list, create compelling book descriptions, and leverage social media effectively. My ebook sales went from zero to consistent monthly income within 60 days of implementing these strategies.",
+        "location": "Miami, Florida",
+        "twitterUrl": "https://twitter.com/emilyrodriguez",
+        "linkedinUrl": "https://linkedin.com/in/emilyrodriguez",
+        "githubUrl": "https://github.com/emilyrodriguez"
+      }
+    ]
+  },
+  "whatsInside": {
+    "title": "What's inside?",
+    "tableOfContents": [
+      "Introduction",
+      "Chapter 1: Getting Started with Ebook Publishing",
+      "Chapter 2: Writing and Formatting Your Ebook",
+      "Chapter 3: Choosing the Right Publishing Platforms",
+      "Chapter 4: Creating Compelling Book Descriptions",
+      "Chapter 5: Building Your Author Brand",
+      "Chapter 6: Email Marketing for Authors",
+      "Chapter 7: Social Media Marketing Strategies",
+      "Chapter 8: Pricing and Distribution",
+      "Chapter 9: Advanced Marketing Techniques",
+      "Chapter 10: Scaling Your Ebook Business",
+      "Conclusion: Your Path to Success"
+    ]
+  },
+  "audiobook": {
+    "title": "Why listen to this audiobook?",
+    "description": [
+      "The audiobook is a way to expand your reading experiences, helping to broaden the ways of accessing the book, in addition to having the book recorded entirely by the author himself.",
+      "This means that the reader will have a special, unique edition.",
+      "Listen to a free excerpt:"
+    ],
+    "audioSample": {
+      "url": "/audiobook-reasons-to-buy.mp3",
+      "label": "Free audio sample"
+    }
+  },
+  "sectionPrices": {
+    "priceLeft": {
+      "title": "Audiobook",
+      "amount": {
+        "decimal": 19,
+        "cents": 99
+      },
+      "details": ["6+ Hours", "MP3 Format"],
+      "button": {
+        "label": "Coming Soon",
+        "url": "#"
+      }
+    },
+    "priceMain": {
+      "title": "Physical Book",
+      "amount": {
+        "decimal": 29,
+        "cents": 99
+      },
+      "details": ["250 Pages", "Premium Paper", "Hardcover"],
+      "button": {
+        "label": "Buy on Amazon",
+        "url": "https://www.amazon.com/Sell-Your-Ebook-Complete-Guide/dp/1234567890"
+      },
+      "tagTitle": {
+        "title": "Most Popular",
+        "cssClass": "text-book-gray bg-book-theme"
+      }
+    },
+    "priceRight": {
+      "title": "E-book",
+      "amount": {
+        "decimal": 19,
+        "cents": 99
+      },
+      "previousAmount": "",
+      "details": ["250 Pages", "PDF & EPUB Format"],
+      "button": {
+        "label": "Buy on Amazon",
+        "url": "https://www.amazon.com/Sell-Your-Ebook-Complete-Guide-ebook/dp/B09WTD7RW9/"
+      }
+    }
+  }
+}
