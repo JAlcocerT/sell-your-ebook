@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 
-import { book, images } from '../config.json';
+import { book, images, whatsInside } from '../config.json';
 ---
 
 <div class='bg-book-gray relative overflow-hidden'>
@@ -30,44 +30,14 @@ import { book, images } from '../config.json';
       </svg>
     </div><div class='relative z-10'>
       <h2 class='text-5xl mb-10 font-semibold text-gray-50 px-4'>
-        O que tem<!-- -->
-        <span class='text-book-theme pl-4'>dentro?</span>
+        {whatsInside.title.split(' ').slice(0, 2).join(' ')}
+        <span class='text-book-theme pl-4'>{whatsInside.title.split(' ').slice(2).join(' ')}</span>
       </h2><div class='flex-none sm:flex'>
         <div class='text-base sm:flex-1 px-4'>
           <ol class='text-gray-400 ml-4 mb-4 font-body'>
-            <li class='text-lg mb-2 text-gray-100 font-semibold'>Prólogo</li>
-            <li class='text-lg mb-2 text-gray-100 font-semibold'>
-              Uma melodia no poente
-            </li>
-            <li class='text-lg mb-2 text-gray-100 font-semibold'>
-              A primeira pétala
-            </li>
-            <li class='text-lg mb-2 text-gray-100 font-semibold'>
-              Os natimortos
-            </li>
-            <li class='text-lg mb-2 text-gray-100 font-semibold'>
-              O grande nadador
-            </li>
-            <li class='text-lg mb-2 text-gray-100 font-semibold'>
-              O gato Maracajá
-            </li>
-            <li class='text-lg mb-2 text-gray-100 font-semibold'>
-              O canto proibido
-            </li>
-            <li class='text-lg mb-2 text-gray-100 font-semibold'>O viajante</li>
-            <li class='text-lg mb-2 text-gray-100 font-semibold'>
-              Uma voz que se vai
-            </li>
-            <li class='text-lg mb-2 text-gray-100 font-semibold'>
-              Uma voz que fica
-            </li>
-            <li class='text-lg mb-2 text-gray-100 font-semibold'>O recomeço</li>
-            <li class='text-lg mb-2 text-gray-100 font-semibold'>
-              O lamento de Maria
-            </li>
-            <li class='text-lg mb-2 text-gray-100 font-semibold'>
-              A primeira flor do Aguapé
-            </li>
+            {whatsInside.tableOfContents.map((chapter) => (
+              <li class='text-lg mb-2 text-gray-100 font-semibold'>{chapter}</li>
+            ))}
           </ol>
         </div><div class='sm:flex-1 px-4'>
           <Image

@@ -99,7 +99,10 @@
       "downloadChapter": "Download the first chapter",
       "downloadChapterSuffix": "for free."
     },
-    "amazonTag": "bestseller"
+    "amazonTag": "bestseller",
+    "urls": {
+      "buyBook": "https://buy.stripe.com/6oEg2n1pu15j9UcbII"
+    }
   },
   "whyReadThisBook": {
     "title": "Why read this book?",
@@ -132,6 +135,65 @@
       "unit": "copies",
       "suffix": "sold worldwide"
     }
+  },
+  "interviews": {
+    "title": "See what readers are saying...",
+    "testimonials": [
+      {
+        "imageUrl": "/avatar-addy.jpeg",
+        "name": "JL Johnson",
+        "company": {
+          "name": "Digital Marketing Expert",
+          "url": "https://sarahjohnson.com"
+        },
+        "summary": "This book completely transformed my approach to ebook publishing. The step-by-step strategies are practical and immediately actionable. I went from struggling to sell 10 copies to generating $5,000 in my first month using the techniques outlined in this guide.",
+        "location": "Austin, Texas",
+        "twitterUrl": "https://twitter.com/sarahjohnson",
+        "linkedinUrl": "https://linkedin.com/in/sarahjohnson"
+      },
+      {
+        "imageUrl": "/avatar-berg.jpeg",
+        "name": "Michael Chen",
+        "company": {
+          "name": "Self-Published Author",
+          "url": "https://michaelchenbooks.com"
+        },
+        "summary": "As a first-time author, I was overwhelmed by the publishing process. This book provided clear guidance on everything from formatting to marketing. The distribution strategies alone helped me reach readers across multiple platforms and increase my sales by 300%.",
+        "location": "Seattle, Washington",
+        "twitterUrl": "https://twitter.com/michaelchen",
+        "mediumUrl": "https://medium.com/@michaelchen"
+      },
+      {
+        "imageUrl": "/avatar-zachary.jpeg",
+        "name": "Yosua Rodriguez",
+        "company": {
+          "name": "Content Creator & Author",
+          "url": "https://emilyrodriguez.com"
+        },
+        "summary": "The marketing section of this book is pure gold. I learned how to build an email list, create compelling book descriptions, and leverage social media effectively. My ebook sales went from zero to consistent monthly income within 60 days of implementing these strategies.",
+        "location": "Miami, Florida",
+        "twitterUrl": "https://twitter.com/emilyrodriguez",
+        "linkedinUrl": "https://linkedin.com/in/emilyrodriguez",
+        "githubUrl": "https://github.com/emilyrodriguez"
+      }
+    ]
+  },
+  "whatsInside": {
+    "title": "What's inside?",
+    "tableOfContents": [
+      "Introduction",
+      "Chapter 1: Getting Started with Ebook Publishing",
+      "Chapter 2: Writing and Formatting Your Ebook",
+      "Chapter 3: Choosing the Right Publishing Platforms",
+      "Chapter 4: Creating Compelling Book Descriptions",
+      "Chapter 5: Building Your Author Brand",
+      "Chapter 6: Email Marketing for Authors",
+      "Chapter 7: Social Media Marketing Strategies",
+      "Chapter 8: Pricing and Distribution",
+      "Chapter 9: Advanced Marketing Techniques",
+      "Chapter 10: Scaling Your Ebook Business",
+      "Conclusion: Your Path to Success"
+    ]
   },
   "sectionPrices": {
     "priceLeft": {
