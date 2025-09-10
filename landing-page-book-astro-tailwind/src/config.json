@@ -224,6 +224,18 @@
     "locale": "en_US",
     "title": "Sell Your Ebook - Complete Guide to Digital Publishing"
   },
+  "analytics": {
+    "enabled": true,
+    "googleAnalytics": {
+      "enabled": true,
+      "trackingId": "G-9FXFDTDRH4"
+    },
+    "umami": {
+      "enabled": true,
+      "scriptUrl": "https://weban.fossengineer.com/script.js",
+      "websiteId": "9e00fc48-3897-4668-9298-09052dae5237"
+    }
+  },
   "showAmazonTag": false,
   "showBuyAudiobookButton": false,
   "showCountingSell": false,

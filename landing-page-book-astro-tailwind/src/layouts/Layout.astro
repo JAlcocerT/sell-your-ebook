@@ -7,7 +7,17 @@ export interface Props {
 const { title } = Astro.props;
 import '@fontsource/pt-serif';
 
-import { seo, author, book } from '../config.json';
+import { seo, author, book, analytics } from '../config.json';
+
+// Get analytics settings from environment variables or config.json
+// Environment variables take precedence over config.json
+const umamiEnabled = import.meta.env.UMAMI_ENABLED === 'true' || analytics.umami.enabled;
+const umamiScriptUrl = import.meta.env.UMAMI_SCRIPT_URL || analytics.umami.scriptUrl;
+const umamiWebsiteId = import.meta.env.UMAMI_WEBSITE_ID || analytics.umami.websiteId;
+
+const googleAnalyticsEnabled = import.meta.env.GOOGLE_ANALYTICS_ENABLED !== 'false' && analytics.googleAnalytics.enabled;
+const googleAnalyticsId = import.meta.env.GOOGLE_ANALYTICS_ID || analytics.googleAnalytics.trackingId;
+
 ---
 
 <!doctype html>
@@ -46,21 +56,33 @@ import { seo, author, book } from '../config.json';
 
 		<title>{seo.title}</title>
 
-		<!-- Google tag (gtag.js) -->
-		<script
-			type='text/partytown'
-			async
-			src='https://www.googletagmanager.com/gtag/js?id=G-9FXFDTDRH4'
-		></script>
-		<script type='text/partytown'>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
-			}
-			gtag('js', new Date());
+		<!-- Google Analytics -->
+		{googleAnalyticsEnabled && (
+			<>
+				<script
+					type='text/partytown'
+					async
+					src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+				></script>
+				<script type='text/partytown'>
+					window.dataLayer = window.dataLayer || [];
+					function gtag() {
+						dataLayer.push(arguments);
+					}
+					gtag('js', new Date());
+					gtag('config', '{googleAnalyticsId}');
+				</script>
+			</>
+		)}
 
-			gtag('config', 'G-9FXFDTDRH4');
-		</script>
+		<!-- Umami Analytics -->
+		{umamiEnabled && (
+			<script
+				defer
+				src={umamiScriptUrl}
+				data-website-id={umamiWebsiteId}
+			></script>
+		)}
 	</head>
 	<body>
 		<slot />

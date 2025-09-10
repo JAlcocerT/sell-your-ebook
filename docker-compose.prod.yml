@@ -19,6 +19,12 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=4321
+      # Analytics Configuration
+      - UMAMI_ENABLED=false
+      - UMAMI_SCRIPT_URL=https://weban.fossengineer.com/script.js
+      - UMAMI_WEBSITE_ID=9e00fc48-3897-4668-9298-09052dae5237
+      - GOOGLE_ANALYTICS_ENABLED=true
+      - GOOGLE_ANALYTICS_ID=G-9FXFDTDRH4
     networks:
       - project-sellyourebook
     restart: unless-stopped

@@ -64,6 +64,56 @@ make stop
 make clean
 ```
 
+## 📊 Analytics Configuration
+
+The theme supports both **Google Analytics** and **Umami Analytics** with environment variable configuration:
+
+### **Enable Umami Analytics:**
+```sh
+# Set environment variable to enable Umami
+export UMAMI_ENABLED=true
+
+# Or edit docker-compose.yml
+environment:
+  - UMAMI_ENABLED=true
+```
+
+### **Configure Analytics via Environment Variables:**
+```sh
+# Umami Analytics
+UMAMI_ENABLED=false                                    # Enable/disable Umami
+UMAMI_SCRIPT_URL=https://weban.fossengineer.com/script.js  # Your Umami script URL
+UMAMI_WEBSITE_ID=9e00fc48-3897-4668-9298-09052dae5237     # Your website ID
+
+# Google Analytics
+GOOGLE_ANALYTICS_ENABLED=true                         # Enable/disable Google Analytics
+GOOGLE_ANALYTICS_ID=G-9FXFDTDRH4                      # Your Google Analytics ID
+```
+
+### **Configure via Config Editor:**
+1. Start the config editor: `make config-editor`
+2. Navigate to http://localhost:5000
+3. Edit the `analytics` section in config.json
+4. Save changes
+
+### **Example Analytics Configuration:**
+```json
+{
+  "analytics": {
+    "enabled": true,
+    "googleAnalytics": {
+      "enabled": true,
+      "trackingId": "G-9FXFDTDRH4"
+    },
+    "umami": {
+      "enabled": true,
+      "scriptUrl": "https://weban.fossengineer.com/script.js",
+      "websiteId": "9e00fc48-3897-4668-9298-09052dae5237"
+    }
+  }
+}
+```
+
 > **See how I created this at [this post](https://jalcocert.github.io/JAlcocerT/ai-driven-ebooks/)**
 
 ---
