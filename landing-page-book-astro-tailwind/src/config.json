@@ -8,7 +8,7 @@
     "showAboutAuthor": true
   },
   "seo": {
-    "title": "Livro Chapada do Corisco por Alisson Carvalho",
+    "title": "This is the ebook page title for your browser tab",
     "description": "Um remador solitário e a tragédia que maculou a história da vila de pescadores",
     "canonical": "https://www.livrochapadadocorisco.com",
     "locale": "pt_BR",
@@ -17,16 +17,35 @@
   "theme": {
     "color": "#f59e0b"
   },
+  "images": {
+    "hero": {
+      "cover": "/cover-2.jpeg",
+      "amazonLogo": "/amazon.svg"
+    },
+    "author": {
+      "photo": "/author.jpeg"
+    },
+    "book": {
+      "inside": "/livro-dentro.jpeg"
+    },
+    "audiobook": {
+      "cover": "/audiobook.jpeg"
+    },
+    "testimonials": {
+      "nikeLogo": "/logo-nike.svg",
+      "avatarZachary": "/avatar-zachary.jpeg"
+    }
+  },
   "author": {
     "name": "Alisson Carvalho",
     "email": "alissonmssc@gmail.com",
-    "location": "Teresina, Piauí",
-    "twitterUrl": "https://twitter.com/rascunholiquido",
-    "instagramUrl": "https://www.instagram.com/rascunhosliquidos/",
-    "linkedinUrl": "https://www.linkedin.com/in/alisson-carvalho-854bb0131/"
+    "location": "Bergen, Norway",
+    "twitterUrl": "https://twitter.com/jalcocert",
+    "instagramUrl": "https://www.instagram.com/jalcocert/",
+    "linkedinUrl": "https://www.linkedin.com/in/jalcocert/"
   },
   "book": {
-    "title": "Chapada do Corisco",
+    "title": "Sell your Ebook",
     "isbn": "978-65-89313-54-0",
     "releaseDate": "2022-03-28",
     "price": "34.9",
@@ -34,6 +53,39 @@
     "buyPhysicalUrl": "https://www.arteimpressaeditora.com.br/product-page/chapada-do-corisco-alisson-carvalho",
     "buyDigitalUrl": "https://www.amazon.com.br/Chapada-do-Corisco-Alisson-Carvalho-ebook/dp/B09WTD7RW9/",
     "buyAudiobookUrl": "#"
+  },
+  "hero": {
+    "title": "Sell your Ebook",
+    "description": [
+      "O livro faz uma releitura das crenças que povoam o imaginário dos ribeirinhos, moradores da Vila Velha do Poti. Local que pincela o cenário de uma região esquecida durante muitos anos e abandonada por uma elite política que adotou um projeto higienista causando a apartação de classes sociais divergentes.",
+      "O isolamento geográfico entre a Vila Velha e a Vila Nova é exposto nas entrelinhas dos causos e lendas. Além disso, os mitos repassados de forma oral entre os ribeirinhos são utilizados como mote para refletir sobre a violência vivenciada pelos moradores.",
+      "\"Chapada do Corisco\" é costura um romance proibido que surpreenderá o leitor, a história retoma o problema da maldição que maculou uma Vila tingindo as águas calmas do Poti com o sangue sagrado."
+    ],
+    "buttons": {
+      "buyBook": "Get the eBook",
+      "buyAudiobook": "Compre o Audiobook",
+      "downloadChapter": "Download the first chapter",
+      "downloadChapterSuffix": "for free."
+    },
+    "amazonTag": "best-seller"
+  },
+  "whyReadThisBook": {
+    "title": "Por que ler esse livro?",
+    "description": [
+      "O livro parte de uma pesquisa de campo que durou aproximadamente dois anos.",
+      "Nasceu da construção da personagem, quando o autor investigava a Lenda do Cabeça de Cuia como parte dos estudos do laboratório de criação para a montagem da peça teatral \"Três\"do grupo Épica Cia de Criação. O texto desenvolvido pelo dramaturgo e diretor Wanden Lima que fez uma releitura da peça de Gomes Campos \"O pescador e o Rio\", gestou em Alisson Carvalho um desejo de investigar mais profundamente não somente a lenda supracitada, mas o conjunto de histórias que permeavam o imaginário dos ribeirinhos piauienses. .",
+      "Essa curiosidade se transformou nos primeiros rascunhos e surgia a obra Chapada do Corisco.",
+      "O livro é um apanhado de muitas das crenças dos piauienses e condensa também elementos importantes para a cultura dos ribeirinhos."
+    ]
+  },
+  "freeChapter": {
+    "title": "Capítulo Gratuito",
+    "description": "Esse capítulo vai te instigar a ler ainda mais.",
+    "button": {
+      "text": "Baixar Capítulo Gratuito",
+      "downloadName": "chapada-do-corisco_prologo-cap-1",
+      "url": "/chapada-do-corisco_prog-cap-1.pdf"
+    }
   },
   "sectionPrices": {
     "priceLeft": {

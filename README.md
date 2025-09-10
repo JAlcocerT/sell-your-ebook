@@ -3,11 +3,14 @@
 Simple landing page with Stripe connection to sell your ebook.
 
 
-1. Thanks to: https://github.com/candidosales/landing-page-book-astro-tailwind
+✨ Acknowledgment
+
+1. Thanks to: https://github.com/candidosales/landing-page-book-astro-tailwind and https://github.com/zenorocha/14habits.comfrom which this repo is based
 
 >  MIT | Simple landing page to sell your book - Astro + Tailwind 
 
 ```sh
+#git clone https://github.com/JAlcocerT/sell-your-ebook
 #npm install
 npm run dev -- --host 0.0.0.0 --port 4321 #http://192.168.1.11:4321/
 ```

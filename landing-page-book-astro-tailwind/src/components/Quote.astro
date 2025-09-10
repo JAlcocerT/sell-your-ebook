@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { images } from '../config.json';
 ---
 
 <section
@@ -35,7 +36,7 @@ import { Image } from 'astro:assets';
         fill='url(#ad119f34-7694-4c31-947f-5c9d249b21f3)'></rect>
     </svg><div class='relative'>
       <Image
-        src='/logo-nike.svg'
+        src={images.testimonials.nikeLogo}
         class='mx-auto'
         height='100'
         width='100'
@@ -56,7 +57,7 @@ import { Image } from 'astro:assets';
             <div class='md:flex-shrink-0'>
               <Image
                 class='mx-auto h-12 w-12 rounded-full'
-                src='/avatar-zachary.jpeg'
+                src={images.testimonials.avatarZachary}
                 alt='Zachary Sohovich'
                 width={48}
                 height={48}

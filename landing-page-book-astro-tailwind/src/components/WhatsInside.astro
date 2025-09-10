@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 
-import { book } from '../config.json';
+import { book, images } from '../config.json';
 ---
 
 <div class='bg-book-gray relative overflow-hidden'>
@@ -72,7 +72,7 @@ import { book } from '../config.json';
         </div><div class='sm:flex-1 px-4'>
           <Image
             class='rounded-md relative z-10'
-            src={'/livro-dentro.jpeg'}
+            src={images.book.inside}
             width={400}
             height={500}
             alt={book.title}
