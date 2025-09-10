@@ -12,12 +12,12 @@ import { sections } from '../config.json';
 ---
 
 <Layout title='Book Title'>
-  <HeroSection />
-  <WhyReadThisBook />
-  {sections.showBuyAudiobook && <AudioBook />}
-  <Interviews />
-  {sections.showDownloadFreeChapter && <FreeChapter />}
-  <WhatsInside />
-  <Buy />
-  <Footer />
+  {sections.hero && <HeroSection />}
+  {sections.whyReadThisBook && <WhyReadThisBook />}
+  {sections.audiobook && <AudioBook />}
+  {sections.interviews && <Interviews />}
+  {sections.freeChapter && <FreeChapter />}
+  {sections.whatsInside && <WhatsInside />}
+  {sections.buy && <Buy />}
+  {sections.footer && <Footer />}
 </Layout>

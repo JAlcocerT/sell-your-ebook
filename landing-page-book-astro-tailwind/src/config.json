@@ -1,25 +1,57 @@
 {
+  "_comment": "=== CONDITIONAL LOGIC CONFIGURATION ===",
+  "_sections": "Control which major sections are rendered on the page",
+  "_conditionalLogic": "Control specific elements within components",
+  "_advancedConditional": "Advanced conditional logic for future features",
+  
   "showAmazonTag": false,
   "showCountingSell": false,
   "showBuyAudiobookButton": false,
+  
   "sections": {
-    "showBuyAudiobook": false,
-    "showDownloadFreeChapter": false,
-    "showAboutAuthor": true
+    "hero": true,
+    "whyReadThisBook": true,
+    "audiobook": false,
+    "interviews": true,
+    "freeChapter": true,
+    "whatsInside": true,
+    "buy": true,
+    "footer": false
+  },
+  
+  "conditionalLogic": {
+    "showAmazonTag": false,
+    "showBuyAudiobookButton": false,
+    "showAboutAuthor": true,
+    "showDownloadLink": true,
+    "showSocialLinks": true,
+    "showTestimonials": true,
+    "showPricing": true
+  },
+  
+  "advancedConditional": {
+    "showHeroCTA": true,
+    "showAuthorBio": true,
+    "showBookPreview": true,
+    "showContactInfo": true,
+    "showRelatedBooks": false,
+    "showNewsletterSignup": false,
+    "showReviews": true,
+    "showTableOfContents": false
   },
   "seo": {
     "title": "This is the ebook page title for your browser tab",
     "description": "Um remador solitário e a tragédia que maculou a história da vila de pescadores",
     "canonical": "https://www.livrochapadadocorisco.com",
     "locale": "pt_BR",
-    "image": "/og_image_800_600_2.png"
+    "image": "/cover-3-Ebook-SSGs.png"
   },
   "theme": {
     "color": "#f59e0b"
   },
   "images": {
     "hero": {
-      "cover": "/cover-2.jpeg",
+      "cover": "/cover-3-Ebook-SSGs.png",
       "amazonLogo": "/amazon.svg"
     },
     "author": {
@@ -85,6 +117,20 @@
       "text": "Baixar Capítulo Gratuito",
       "downloadName": "chapada-do-corisco_prologo-cap-1",
       "url": "/chapada-do-corisco_prog-cap-1.pdf"
+    }
+  },
+  "buy": {
+    "title": "Compre agora",
+    "description": "Se junte a outros leitores, e conheça esse romance proibido na Vila do Poti.",
+    "cta": {
+      "title": "Escolha sua versão",
+      "subtitle": "Todas as versões incluem o mesmo conteúdo"
+    },
+    "countingSell": {
+      "text": "Mais de",
+      "number": "2,425",
+      "unit": "cópias",
+      "suffix": "vendidas"
     }
   },
   "sectionPrices": {
