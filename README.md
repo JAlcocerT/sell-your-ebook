@@ -18,7 +18,6 @@ npm run dev -- --host 0.0.0.0 --port 4321 #http://192.168.1.11:4321/
 #npm run build
 #npm install -g serve #serve with npm
 #serve -s dist #http://localhost:3000
-
 ```
 
 Deploy with containers:
@@ -31,4 +30,91 @@ make quick-dev
 ```sh
 make quick-prod  
 # Access at: http://localhost:8090
+```
+
+---
+
+## 📚 Creating EPUB from Cover Image
+
+You can create an EPUB file from the cover image (`cover-3-Ebook-SSGs.png`) using several methods:
+
+**Method 1: Using Calibre (Recommended)**
+
+```bash
+# Install Calibre
+sudo apt install calibre  # Ubuntu/Debian
+# or download from https://calibre-ebook.com/
+
+# Create HTML file first, then convert to EPUB
+echo '<html><body><img src="cover-3-Ebook-SSGs.png" style="width:100%; height:auto;" /></body></html>' > book.html
+ebook-convert book.html book.epub --cover=cover-3-Ebook-SSGs.png --title="Sell Your Ebook" --authors="Your Name"
+```
+
+**Method 2: Using Pandoc**
+
+```bash
+# Install pandoc
+sudo apt install pandoc  # Ubuntu/Debian
+
+# Create Markdown file first, then convert to EPUB
+echo '# Sell Your Ebook\n\n![Cover](cover-3-Ebook-SSGs.png)' > book.md
+pandoc book.md -o book.epub --epub-cover-image=cover-3-Ebook-SSGs.png --metadata title="Sell Your Ebook" --metadata author="Your Name"
+```
+
+**Method 3: Online Tools**
+
+- **Sigil** (Free EPUB editor): https://sigil-ebook.com/
+- **Calibre Web** (Online conversion)
+- **EPUB generators** (Various online tools)
+
+Method 4: Programmatic (Node.js)
+
+```bash
+# Install epub-gen
+npm install epub-gen
+
+# Create simple script
+node -e "
+const epub = require('epub-gen');
+const options = {
+  title: 'Sell Your Ebook',
+  author: 'Your Name',
+  cover: 'cover-3-Ebook-SSGs.png',
+  content: [{ title: 'Cover', data: '<img src=\"cover-3-Ebook-SSGs.png\" />' }]
+};
+new epub(options).promise.then(() => console.log('EPUB created!'));
+"
+```
+
+### Quick EPUB Creation
+
+```bash
+# Navigate to the public directory
+cd landing-page-book-astro-tailwind/public
+
+# Create HTML file with cover image
+echo '<html><body><img src="cover-3-Ebook-SSGs.png" style="width:100%; height:auto;" /></body></html>' > book.html
+
+# Convert to EPUB with cover
+ebook-convert book.html ../sell-your-ebook.epub --cover=cover-3-Ebook-SSGs.png --title="Sell Your Ebook" --authors="Your Name"
+
+# Clean up
+rm book.html
+```
+
+Alternative: Simple Image-to-EPUB Script
+
+```bash
+# Create a simple script to automate the process
+cat > create_epub.sh << 'EOF'
+#!/bin/bash
+cd landing-page-book-astro-tailwind/public
+echo '<html><body><img src="cover-3-Ebook-SSGs.png" style="width:100%; height:auto;" /></body></html>' > book.html
+ebook-convert book.html ../sell-your-ebook.epub --cover=cover-3-Ebook-SSGs.png --title="Sell Your Ebook" --authors="Your Name"
+rm book.html
+echo "EPUB created: sell-your-ebook.epub"
+EOF
+
+chmod +x create_epub.sh
+./create_epub.sh
 ```
