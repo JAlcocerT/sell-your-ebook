@@ -1,8 +1,10 @@
 # sell-your-ebook
 
-Simple landing page with Stripe connection to sell your ebook.
+Simple **landing page** with Stripe (link to buy.stripe.com product) connection to **sell your ebook**.
 
-> To actually create an ebook (with code), see [this other repo](https://github.com/JAlcocerT/ebooks).
+You will need a way for the ebook to be sent as per striper webhook.
+
+> To actually create an ebook (with code), see [this other repo](https://github.com/JAlcocerT/ebooks) or the `./create_ebooks.sh` script and embrace Pandoc's magic.
 
 
 ✨ Acknowledgment
