@@ -118,6 +118,10 @@ GOOGLE_ANALYTICS_ID=G-9FXFDTDRH4                      # Your Google Analytics ID
 
 > **See how I created this at [this post](https://jalcocert.github.io/JAlcocerT/ai-driven-ebooks/)**
 
+
+<!-- https://youtu.be/XEFpzEIEDFc -->
+[![Youtube Video](https://img.youtube.com/vi/XEFpzEIEDFc/0.jpg)](https://www.youtube.com/watch?v=XEFpzEIEDFc)
+
 ---
 
 ## 📚 Creating EPUB from Cover Image
